@@ -1,0 +1,26 @@
+---
+- hosts: localhost
+  gather_facts: false
+
+  vars:
+          basket:
+                   - sandwich
+                   - bread
+                   - cheese
+  tasks:
+          - name: learning about the debug module
+            debug:
+                    msg: "using debug we can pring -----> {{ item }}"
+            with_items:
+                    - "apple"
+                    - "blueberry" 
+                    - "camelot" 
+
+          - name: learning about loop keyword
+            debug: 
+                    msg: " printing  ---------> {{ item }}"
+
+            loop: 
+                    "{{ basket }}"
+
+
