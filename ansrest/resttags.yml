@@ -13,6 +13,7 @@
           - name: Key prep
             debug:
               msg: "your RSA key is {{ myrsakey }}" 
+              msg: "my filter test is {{ [3, [4, [2]] ] | flatten(levels=2) }}" 
  
             tags:
                     
