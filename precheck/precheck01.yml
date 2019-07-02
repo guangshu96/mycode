@@ -1,6 +1,6 @@
 ---
 - name: Another network playbool example
-  hosts: ~^arista
+  hosts: ~^aristasw
   gather_facts: no
 
 
@@ -9,9 +9,8 @@
             eos_facts:
             when: ansible_network_os == 'eos'
 
-
           - name: Push to the local system
-            copy: 
-                  content: "{{ ansible_facts | to_nice_json }}"
-                  dest: "/home/student/mycode/{{ inventory_hostname }}.txt"
+            copy:
+                    content: "{{ ansible_facts | to_nice_json }}"
+                    dest: "/home/student/mycode/{{ inventory_hostname }}.txt"
 
